@@ -18,11 +18,16 @@ class CocktailsController < ApplicationController
   end
 
   def new
-
+    @cocktail = Cocktail.new
   end
 
   def create
-
+    @cocktail = Cocktail.new(set_cocktail)
+    if @cocktail.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      render "cocktails/new"
+    end
   end
 
   def destroy
