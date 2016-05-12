@@ -16,7 +16,7 @@
 
 <div class="container">
   <ul id="doses">
-    <% @cocktail.doses.each do |dose| %>
+    <% @cocktail.doses.reverse_each do |dose| %>
     <li class="dose text-center">
       <h1><%= dose.description %> <%= dose.ingredient.name %></h1>
       <%= link_to "Delete Dose", dose_path(dose), method: :delete, class: "btn btn-danger" %>
