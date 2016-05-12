@@ -1,0 +1,22 @@
+<div class="banner text-center">
+  <div class="container">
+    <h1>Welcome to the Shaker</h1>
+    <h2>Cocktail Maker</h2>
+    <ul class="list-inline">
+      <!--li> link_to "Add Cocktail", new_cocktail_path, class: "btn btn-primary" </li-->
+      <li><%= link_to "Browse Cocktails", "#cocktails", class: "btn btn-primary" %></li>
+    </ul>
+  </div>
+</div>
+<div class="container text-center" id="cocktails">
+  <h1>Our cocktails</h1>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12 col-md-6">
+        <div class="card">
+          <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
