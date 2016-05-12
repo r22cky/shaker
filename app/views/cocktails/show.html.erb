@@ -7,9 +7,9 @@
 <div class="container">
   <div class="form-inline text-center">
     <%= simple_form_for [@cocktail, @dose] do |f| %>
-      <%= f.input :description %>
       <%= f.input :ingredient_id, collection: @ingredients %>
-      <%= f.button :submit, input_html: {class: "text-center"} %>
+      <%= f.input :description, label: "Quantité" %>
+      <%= f.button :submit, input_html: {class: "text-center btn btn-info"} %>
     <% end %>
   </div>
 </div>
@@ -19,7 +19,7 @@
     <% @cocktail.doses.each do |dose| %>
     <li class="dose text-center">
       <h1><%= dose.description %> <%= dose.ingredient.name %></h1>
-      <%= link_to "Delete Dose", cocktail_path(@cocktail), method: :delete, class: "btn btn-danger" %>
+      <%= link_to "Delete Dose", dose_path(dose), method: :delete, class: "btn btn-danger" %>
     </li>
     <% end %>
   </ul>
