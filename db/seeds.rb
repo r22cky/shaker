@@ -8,3 +8,7 @@
 Ingredient.create(name: "lemon")
 Ingredient.create(name: "ice")
 Ingredient.create(name: "mint leaves")
+
+Cocktail.create(name: "Sex on the beach")
+Cocktail.create(name: "Cosmopolitan")
+Cocktail.create(name: "Pina Colada")
