@@ -1,0 +1,26 @@
+<div class="wrapper text-center" >
+  <h1><%= @cocktail.name %></h1>
+  <%= link_to "Home", cocktails_path, class: "btn btn-success" %>
+  <%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete, class: "btn btn-danger" %>
+</div>
+
+<div class="container">
+  <div class="form-inline text-center">
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.input :description %>
+      <%= f.input :ingredient_id, collection: @ingredients %>
+      <%= f.button :submit, input_html: {class: "text-center"} %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <ul id="doses">
+    <% @cocktail.doses.each do |dose| %>
+    <li class="dose text-center">
+      <h1><%= dose.description %> <%= dose.ingredient.name %></h1>
+      <%= link_to "Delete Dose", cocktail_path(@cocktail), method: :delete, class: "btn btn-danger" %>
+    </li>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,21 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  background-image: url(http://www.voyage-pulse.fr/wp-content/uploads/2015/05/cocktails-tendance-%C3%A9t%C3%A9-2015.jpg);
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
+  p {
+    font-size: 25px;
+    font-weight: lighter;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 50px;
+  }
+}
