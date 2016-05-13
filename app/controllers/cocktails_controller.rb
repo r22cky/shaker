@@ -9,6 +9,7 @@ class CocktailsController < ApplicationController
     @cocktail = find_cocktail
     @dose = Dose.new
     @ingredients = Ingredient.all
+    @review = Review.new
   end
 
   def edit

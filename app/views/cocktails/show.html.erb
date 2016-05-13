@@ -22,9 +22,9 @@
   <div class="col-xs-12 col-sm-4">
     <h3 class="text-center">Commentez la recette !</h3>
     <div class="form line-vertical">
-      <%= simple_form_for [@cocktail, @dose] do |f| %>
-        <%= f.input :ingredient_id, collection: @ingredients %>
-        <%= f.input :description, label: "Quantité" %>
+      <%= simple_form_for [@cocktail, @review] do |f| %>
+        <%= f.input :content, label: "Commentaire" %>
+        <%= f.input :rating, collection: [1, 2, 3, 4, 5], label: "Note" %>
         <%= f.button :submit, input_html: {class: "text-center btn btn-info"} %>
       <% end %>
     </div>
@@ -34,12 +34,24 @@
 
 
 <div class="container">
-  <ul id="doses">
-    <% @cocktail.doses.reverse_each do |dose| %>
-    <li class="dose text-center">
-      <h1><%= dose.description %> <%= dose.ingredient.name %></h1>
-      <%= link_to "Delete Dose", dose_path(dose), method: :delete, class: "btn btn-danger" %>
-    </li>
-    <% end %>
-  </ul>
+  <div class="col-xs-12 col-sm-8">
+    <ul class="show-input">
+      <% @cocktail.doses.reverse_each do |dose| %>
+      <li class="dose text-center">
+        <h1><%= dose.description %> <%= dose.ingredient.name %></h1>
+        <%= link_to "Delete Dose", dose_path(dose), method: :delete, class: "btn btn-danger" %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <ul class="show-input">
+      <% @cocktail.reviews.reverse_each do |review| %>
+      <li class="review text-center">
+        <h3><%= review.content %> <%= review.rating %> / 5</h3>
+        <!--= link_to "Delete review", review_path(review), method: :delete, class: "btn btn-danger" %-->
+      </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
