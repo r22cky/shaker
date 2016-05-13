@@ -14,7 +14,14 @@
   color: grey;
 }
 
-.form-inline {
-  border-bottom: 1px solid lightgrey;
+.form {
   padding: 20px;
+}
+
+.line-horizontal {
+  border-bottom: 1px solid lightgrey;
+}
+
+.line-vertical {
+  border-left: 1px solid lightgrey;
 }
